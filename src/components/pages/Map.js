@@ -1,11 +1,12 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import "./Map.css";
 import GoogleMapReact from "google-map-react";
-import { Paper, Typography, useMediaQuery } from "@material-ui/core";
-// import LocationOnOutlinedIcon from "@material-ui/icons/LocationOnOutlined";
-// import Rating from "@material-ui/lab";
+import { useMediaQuery } from "@material-ui/core";
+
 import { getPlacesData } from "./API/index";
 import PlaceDetails from "./MapComponents/PlaceDetails";
+
+import { Autocomplete } from "@react-google-maps/api";
 
 import useStyles from "./MapComponents/MapStyles";
 
@@ -16,14 +17,16 @@ export default function Map() {
     lng: 34.7818,
   });
   const [bounds, setBounds] = useState(null);
+  const [autocomplete, setAutocomplete] = useState(null);
 
-  // useEffect(() => {
-  //   navigator.geolocation.getCurrentPosition(
-  //     ({ coords: { latitude, longitude } }) => {
-  //       setCoordinates({ lat: latitude, lng: longitude });
-  //     }
-  //   );
-  // }, []);
+  const onLoad = (autoC) => setAutocomplete(autoC);
+  const onPlaceChanged = () => {
+    const lat = autocomplete.getPlace().geometry.location.lat();
+    const lng = autocomplete.getPlace().geometry.location.lng();
+    setCoordinates({ lat, lng });
+  };
+
+  const originRef = useRef();
 
   useEffect(() => {
     // console.log(coordinates, bounds);
@@ -42,8 +45,15 @@ export default function Map() {
   return (
     <div>
       <div className="SearchingBar">
-        <button>sadasd</button>
-        <input></input>
+        {/* <button>sadasd</button> */}
+        <div className="inputformap">
+          <Autocomplete onLoad={onLoad} onPlaceChanged={onPlaceChanged}>
+            <input
+              style={{ width: "140%", height: "20%", borderRadius: "30px" }}
+              ref={originRef}
+            ></input>
+          </Autocomplete>
+        </div>
       </div>
       <div className={classes.mapContainer}>
         <GoogleMapReact
@@ -60,6 +70,7 @@ export default function Map() {
           onChildClick={""}
         ></GoogleMapReact>
       </div>
+
       <div className="placesOnMap">
         <PlaceDetails places={places} />
       </div>

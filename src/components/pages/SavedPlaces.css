@@ -6,6 +6,13 @@ body .SavedPlaces {
   background-color: green;
 } */
 
+.cardsPlacement {
+  position: relative;
+  left: 37%;
+  padding: 10px;
+  /* width: 50%; */
+}
+
 .resetButton {
   background-color: white;
   color: black;
@@ -14,6 +21,7 @@ body .SavedPlaces {
   height: 10%;
   cursor: pointer;
   border-radius: 8px;
+  margin: 10px;
 }
 
 .resetButton:hover {

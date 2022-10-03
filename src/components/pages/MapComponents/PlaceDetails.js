@@ -1,11 +1,19 @@
 import React from "react";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 import "./PlaceDetails.css";
 
 export default function PlaceDetails({ places }) {
-  // const [savedPlace, setSavedPlace] = useState([]);
+  let navigate = useNavigate();
+  const routeChange = () => {
+    let path = `/navigation`;
+    navigate(path);
+  };
+
   var savedPlaces = [];
+
+  const [savedDest, setSavedDest] = useState("");
 
   const loaderLocal = localStorage.getItem("list")
     ? JSON.parse(localStorage.getItem("list"))
@@ -65,10 +73,13 @@ export default function PlaceDetails({ places }) {
                 </button>
                 <button
                   onClick={() => {
-                    // console.log(savedPlaces);
-                    savedPlaces.push(place);
-                    localStorage.setItem("list", JSON.stringify(savedPlaces));
-                    console.log(savedPlaces);
+                    setSavedDest(place.address);
+                    localStorage.setItem(
+                      "destination",
+                      JSON.stringify(place.address)
+                    );
+                    console.log(savedDest);
+                    routeChange();
                   }}
                 >
                   <img

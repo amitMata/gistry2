@@ -64,7 +64,7 @@ export default function Navigation() {
               className="searchinput"
               style={{ width: "340px", height: "30px" }}
               type="text"
-              placeholder="   From..."
+              placeholder=" From..."
               ref={originRef}
             ></input>
           </Autocomplete>
@@ -73,7 +73,8 @@ export default function Navigation() {
               className="searchinput"
               style={{ width: "340px", height: "30px" }}
               type="text"
-              placeholder="   To..."
+              placeholder={" To..."}
+              value={JSON.parse(localStorage.getItem("destination"))}
               ref={destinationRef}
             ></input>
           </Autocomplete>

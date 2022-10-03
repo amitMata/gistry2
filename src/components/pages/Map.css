@@ -16,7 +16,7 @@
   float: right;
 }
 
-.SearchingBar {
+/* .SearchingBar {
   z-index: 10;
   width: 100px;
   height: 100px;
@@ -26,4 +26,10 @@
   position: absolute;
   top: 15vh;
   right: 120vh;
+} */
+
+.inputformap {
+  position: fixed;
+  right: 8%;
+  top: 6%;
 }

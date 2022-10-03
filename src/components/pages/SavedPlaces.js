@@ -1,10 +1,17 @@
 import React from "react";
 import SavedCards from "./SavedCards";
+import { useNavigate } from "react-router-dom";
 
 import "./SavedPlaces.css";
 
 export default function SavedPlaces() {
   var savedPlaceFromLocalStorage = [];
+
+  let navigate = useNavigate();
+  const routeChange = () => {
+    let path = `/SavedPlaces`;
+    navigate(path);
+  };
 
   // console.log(JSON.parse(localStorage.getItem("list")));
 
@@ -47,8 +54,18 @@ export default function SavedPlaces() {
       className="SavedPlaces"
       style={{ backgroundColor: "#6fecd3", height: "100vh" }}
     >
-      <SavedCards savedPlaceFromLocalStorage={savedPlaceFromLocalStorage} />
-      <button className="resetButton">Reset Favorites</button>
+      <div className="cardsPlacement">
+        <SavedCards savedPlaceFromLocalStorage={savedPlaceFromLocalStorage} />
+      </div>
+      <button
+        className="resetButton"
+        onClick={() => {
+          localStorage.clear();
+          routeChange();
+        }}
+      >
+        Reset Favorites
+      </button>
     </div>
   );
 }
