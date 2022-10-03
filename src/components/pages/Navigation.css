@@ -1,0 +1,56 @@
+.mapNav {
+  position: "absolute";
+  height: 100%;
+  width: 100%;
+  height: 94vh;
+  width: 100%;
+  display: inline-block;
+  vertical-align: middle;
+  float: right;
+  /* padding-right: 20%; */
+  overflow: hidden;
+  margin: 0;
+}
+
+.Searching {
+  z-index: 10;
+  /* width: 100px; */
+  /* height: 100px; */
+  width: 20%;
+  height: 17%;
+  position: absolute;
+  top: 15vh;
+  right: 75%;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  transition: 0.3s;
+  background-color: #45c9ae;
+  padding: 8px;
+  color: white;
+  border-radius: 25px;
+  border: 1px solid #ccc;
+  /* text-align: center; */
+  /* margin: -25px 0 0 -25px; */
+}
+
+.cardSearch {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  transition: 0.3s;
+}
+
+.searchinput {
+  margin: 4px;
+  border-radius: 20px;
+}
+
+.RouteButton {
+  background-color: #3eb19a; /* Green */
+  border: none;
+  color: white;
+  padding: 5px 15px;
+  text-align: center;
+  /* text-decoration: none; */
+  display: inline-block;
+  font-size: 16px;
+  border-radius: 12px;
+  cursor: pointer;
+}

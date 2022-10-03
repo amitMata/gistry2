@@ -1,0 +1,29 @@
+.menumap {
+  display: inline-block;
+  vertical-align: middle;
+  float: right;
+  padding-right: 50px;
+  padding-top: 50px;
+}
+
+.placesOnMap {
+  width: 22%;
+  height: 90vh;
+  /* margin-left: auto; */
+  position: relative;
+  top: -90vh;
+  overflow-y: scroll;
+  float: right;
+}
+
+.SearchingBar {
+  z-index: 10;
+  width: 100px;
+  height: 100px;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 15vh;
+  right: 120vh;
+}

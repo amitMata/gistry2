@@ -36,3 +36,37 @@
     transform: rotate(360deg);
   }
 }
+
+.signInDiv {
+  height: 150px;
+  /* border: 3px solid green; */
+  position: absolute;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  margin: 0;
+  top: 60%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  z-index: -1;
+}
+
+.logintext {
+  margin: 0;
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+  z-index: 100;
+}
+
+.imglogin {
+  margin: 0;
+  position: absolute;
+  top: 22%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+  z-index: 100;
+}

@@ -1,0 +1,22 @@
+body .SavedPlaces {
+  background-color: #4c9284;
+}
+
+/* .SavedPlaces {
+  background-color: green;
+} */
+
+.resetButton {
+  background-color: white;
+  color: black;
+  border: 2px solid white; /* Green */
+  width: 10%;
+  height: 10%;
+  cursor: pointer;
+  border-radius: 8px;
+}
+
+.resetButton:hover {
+  background-color: #62b6a5; /* Green */
+  color: white;
+}
