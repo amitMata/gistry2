@@ -1,9 +1,12 @@
 import React from "react";
+import Logo from "../images/ILocationLogo-removebg-preview.png";
+
 import "./About.css";
 
 export default function About() {
   return (
     <div className="textHome">
+      <img className="image" src={Logo} alt=""></img>
       <br></br>
       This web application was built as part of "GIS Application Development
       Course" with the teaching and guidence of Mr. Mark Israeli.
